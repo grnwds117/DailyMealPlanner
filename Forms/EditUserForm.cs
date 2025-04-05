@@ -27,7 +27,7 @@ namespace DailyMealPlanner.Forms
             WeightTextBox.Text = currentUser.Weight.ToString();
             HeightTextBox.Text = currentUser.Height.ToString();
             AgeTextBox.Text = currentUser.Age.ToString();
-            ActivityTextBox.Text = currentUser.Activity;
+            ActivityComboBox.Text = currentUser.Activity;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace DailyMealPlanner.Forms
             currentUser.Weight = int.Parse(WeightTextBox.Text);
             currentUser.Height = int.Parse(HeightTextBox.Text);
             currentUser.Age = int.Parse(AgeTextBox.Text);
-            currentUser.Activity = ActivityTextBox.Text;
+            currentUser.Activity = ActivityComboBox.Text;
 
             currentUser.SaveToXml("user.xml");
             DialogResult = DialogResult.OK;

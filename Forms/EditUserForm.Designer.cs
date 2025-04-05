@@ -35,8 +35,8 @@
             AgeLabel = new Label();
             AgeTextBox = new TextBox();
             ActivityLabel = new Label();
-            ActivityTextBox = new TextBox();
             SaveButton = new Button();
+            ActivityComboBox = new ComboBox();
             SuspendLayout();
             // 
             // WeightTextBox
@@ -96,13 +96,6 @@
             ActivityLabel.TabIndex = 7;
             ActivityLabel.Text = "Активность";
             // 
-            // ActivityTextBox
-            // 
-            ActivityTextBox.Location = new Point(107, 272);
-            ActivityTextBox.Name = "ActivityTextBox";
-            ActivityTextBox.Size = new Size(182, 27);
-            ActivityTextBox.TabIndex = 6;
-            // 
             // SaveButton
             // 
             SaveButton.Location = new Point(138, 335);
@@ -113,14 +106,23 @@
             SaveButton.UseVisualStyleBackColor = true;
             SaveButton.Click += SaveButton_Click;
             // 
+            // ActivityComboBox
+            // 
+            ActivityComboBox.FormattingEnabled = true;
+            ActivityComboBox.Items.AddRange(new object[] { "Низкая", "Нормальная", "Умеренная", "Высокая" });
+            ActivityComboBox.Location = new Point(109, 275);
+            ActivityComboBox.Name = "ActivityComboBox";
+            ActivityComboBox.Size = new Size(180, 28);
+            ActivityComboBox.TabIndex = 9;
+            // 
             // EditUserForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(372, 376);
+            Controls.Add(ActivityComboBox);
             Controls.Add(SaveButton);
             Controls.Add(ActivityLabel);
-            Controls.Add(ActivityTextBox);
             Controls.Add(AgeLabel);
             Controls.Add(AgeTextBox);
             Controls.Add(HeightLabel);
@@ -142,7 +144,7 @@
         private Label AgeLabel;
         private TextBox AgeTextBox;
         private Label ActivityLabel;
-        private TextBox ActivityTextBox;
         private Button SaveButton;
+        private ComboBox ActivityComboBox;
     }
 }

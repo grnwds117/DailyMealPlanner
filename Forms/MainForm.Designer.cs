@@ -35,121 +35,106 @@
             ActivityLabel = new Label();
             MorningLabel = new Label();
             LunchLabel = new Label();
-            MorningPanel = new Panel();
-            LunchPanel = new Panel();
-            EveningPanel = new Panel();
             label5 = new Label();
             MorningButton = new Button();
             LunchButton = new Button();
             EveningButton = new Button();
             EditUserButton = new Button();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            flowLayoutPanel2 = new FlowLayoutPanel();
+            flowLayoutPanel3 = new FlowLayoutPanel();
+            label1 = new Label();
+            CaloriesLabel = new Label();
+            CarbsLabel = new Label();
+            FatsLabel = new Label();
+            ProteinLabel = new Label();
             SuspendLayout();
             // 
             // UserDataLabel
             // 
             UserDataLabel.AutoSize = true;
-            UserDataLabel.Font = new Font("Trebuchet MS", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            UserDataLabel.Location = new Point(167, 23);
+            UserDataLabel.Font = new Font("Cambria", 10.8F, FontStyle.Bold);
+            UserDataLabel.ForeColor = Color.Navy;
+            UserDataLabel.Location = new Point(201, 35);
             UserDataLabel.Name = "UserDataLabel";
-            UserDataLabel.Size = new Size(295, 23);
+            UserDataLabel.Size = new Size(287, 21);
             UserDataLabel.TabIndex = 0;
-            UserDataLabel.Text = "Пользовательская информация:";
+            UserDataLabel.Text = "Пользовательская информация";
             // 
             // WeightLabel
             // 
             WeightLabel.AutoSize = true;
-            WeightLabel.Location = new Point(167, 60);
+            WeightLabel.Font = new Font("Cambria", 10.2F);
+            WeightLabel.Location = new Point(201, 72);
             WeightLabel.Name = "WeightLabel";
-            WeightLabel.Size = new Size(40, 20);
+            WeightLabel.Size = new Size(43, 20);
             WeightLabel.TabIndex = 1;
             WeightLabel.Text = "Вес: ";
             // 
             // HeightLabel
             // 
             HeightLabel.AutoSize = true;
-            HeightLabel.Location = new Point(167, 80);
+            HeightLabel.Font = new Font("Cambria", 10.2F);
+            HeightLabel.Location = new Point(201, 92);
             HeightLabel.Name = "HeightLabel";
-            HeightLabel.Size = new Size(78, 20);
+            HeightLabel.Size = new Size(88, 20);
             HeightLabel.TabIndex = 2;
             HeightLabel.Text = "Рост (см): ";
             // 
             // AgeLabel
             // 
             AgeLabel.AutoSize = true;
-            AgeLabel.Location = new Point(167, 100);
+            AgeLabel.Font = new Font("Cambria", 10.2F);
+            AgeLabel.Location = new Point(201, 112);
             AgeLabel.Name = "AgeLabel";
-            AgeLabel.Size = new Size(71, 20);
+            AgeLabel.Size = new Size(78, 20);
             AgeLabel.TabIndex = 3;
             AgeLabel.Text = "Возраст: ";
             // 
             // ActivityLabel
             // 
             ActivityLabel.AutoSize = true;
-            ActivityLabel.Location = new Point(167, 120);
+            ActivityLabel.Font = new Font("Cambria", 10.2F);
+            ActivityLabel.Location = new Point(201, 132);
             ActivityLabel.Name = "ActivityLabel";
-            ActivityLabel.Size = new Size(95, 20);
+            ActivityLabel.Size = new Size(110, 20);
             ActivityLabel.TabIndex = 4;
             ActivityLabel.Text = "Активность: ";
             // 
             // MorningLabel
             // 
             MorningLabel.AutoSize = true;
-            MorningLabel.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            MorningLabel.Location = new Point(35, 154);
+            MorningLabel.Font = new Font("Cambria", 13.8F);
+            MorningLabel.Location = new Point(35, 197);
             MorningLabel.Name = "MorningLabel";
-            MorningLabel.Size = new Size(85, 25);
+            MorningLabel.Size = new Size(95, 27);
             MorningLabel.TabIndex = 5;
-            MorningLabel.Text = "Morning";
+            MorningLabel.Text = "Завтрак";
             // 
             // LunchLabel
             // 
             LunchLabel.AutoSize = true;
-            LunchLabel.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            LunchLabel.Location = new Point(365, 154);
+            LunchLabel.Font = new Font("Cambria", 13.8F);
+            LunchLabel.Location = new Point(35, 483);
             LunchLabel.Name = "LunchLabel";
-            LunchLabel.Size = new Size(63, 25);
+            LunchLabel.Size = new Size(63, 27);
             LunchLabel.TabIndex = 6;
-            LunchLabel.Text = "Lunch";
-            // 
-            // MorningPanel
-            // 
-            MorningPanel.BackColor = Color.FromArgb(255, 255, 192);
-            MorningPanel.Location = new Point(35, 199);
-            MorningPanel.Name = "MorningPanel";
-            MorningPanel.Size = new Size(300, 500);
-            MorningPanel.TabIndex = 7;
-            // 
-            // LunchPanel
-            // 
-            LunchPanel.BackColor = Color.FromArgb(255, 255, 192);
-            LunchPanel.Location = new Point(365, 199);
-            LunchPanel.Name = "LunchPanel";
-            LunchPanel.Size = new Size(300, 500);
-            LunchPanel.TabIndex = 8;
-            // 
-            // EveningPanel
-            // 
-            EveningPanel.BackColor = Color.FromArgb(255, 255, 192);
-            EveningPanel.Location = new Point(697, 199);
-            EveningPanel.Margin = new Padding(0);
-            EveningPanel.Name = "EveningPanel";
-            EveningPanel.Padding = new Padding(0, 0, 0, 200);
-            EveningPanel.Size = new Size(300, 500);
-            EveningPanel.TabIndex = 10;
+            LunchLabel.Text = "Обед";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label5.Location = new Point(697, 154);
+            label5.Font = new Font("Cambria", 13.8F);
+            label5.Location = new Point(33, 781);
             label5.Name = "label5";
-            label5.Size = new Size(80, 25);
+            label5.Size = new Size(70, 27);
             label5.TabIndex = 9;
-            label5.Text = "Evening";
+            label5.Text = "Ужин";
             // 
             // MorningButton
             // 
-            MorningButton.Location = new Point(126, 154);
+            MorningButton.Font = new Font("Cambria", 10.2F);
+            MorningButton.Location = new Point(217, 193);
             MorningButton.Name = "MorningButton";
             MorningButton.Size = new Size(94, 29);
             MorningButton.TabIndex = 11;
@@ -158,46 +143,145 @@
             // 
             // LunchButton
             // 
-            LunchButton.Location = new Point(447, 154);
+            LunchButton.BackColor = Color.Transparent;
+            LunchButton.Font = new Font("Cambria", 10.2F);
+            LunchButton.Location = new Point(219, 481);
             LunchButton.Name = "LunchButton";
             LunchButton.Size = new Size(94, 29);
             LunchButton.TabIndex = 12;
             LunchButton.Text = "Добавить";
-            LunchButton.UseVisualStyleBackColor = true;
+            LunchButton.UseVisualStyleBackColor = false;
             // 
             // EveningButton
             // 
-            EveningButton.Location = new Point(793, 154);
+            EveningButton.BackColor = Color.Transparent;
+            EveningButton.Font = new Font("Cambria", 10.2F);
+            EveningButton.Location = new Point(217, 779);
             EveningButton.Name = "EveningButton";
             EveningButton.Size = new Size(94, 29);
             EveningButton.TabIndex = 13;
             EveningButton.Text = "Добавить";
-            EveningButton.UseVisualStyleBackColor = true;
+            EveningButton.UseVisualStyleBackColor = false;
             // 
             // EditUserButton
             // 
-            EditUserButton.Location = new Point(12, 60);
+            EditUserButton.BackColor = Color.Transparent;
+            EditUserButton.Font = new Font("Calibri", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            EditUserButton.Location = new Point(35, 54);
             EditUserButton.Name = "EditUserButton";
             EditUserButton.Size = new Size(135, 57);
             EditUserButton.TabIndex = 14;
             EditUserButton.Text = "Редактировать информацию";
-            EditUserButton.UseVisualStyleBackColor = true;
+            EditUserButton.UseVisualStyleBackColor = false;
             EditUserButton.Click += EditUserButton_Click;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowLayoutPanel1.BackColor = Color.BurlyWood;
+            flowLayoutPanel1.Location = new Point(35, 232);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Padding = new Padding(0, 0, 10, 0);
+            flowLayoutPanel1.Size = new Size(1021, 220);
+            flowLayoutPanel1.TabIndex = 15;
+            flowLayoutPanel1.WrapContents = false;
+            // 
+            // flowLayoutPanel2
+            // 
+            flowLayoutPanel2.AutoScroll = true;
+            flowLayoutPanel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowLayoutPanel2.BackColor = Color.BurlyWood;
+            flowLayoutPanel2.Location = new Point(37, 522);
+            flowLayoutPanel2.Name = "flowLayoutPanel2";
+            flowLayoutPanel2.Padding = new Padding(0, 0, 10, 0);
+            flowLayoutPanel2.Size = new Size(1019, 220);
+            flowLayoutPanel2.TabIndex = 16;
+            flowLayoutPanel2.WrapContents = false;
+            // 
+            // flowLayoutPanel3
+            // 
+            flowLayoutPanel3.AutoScroll = true;
+            flowLayoutPanel3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowLayoutPanel3.BackColor = Color.BurlyWood;
+            flowLayoutPanel3.Location = new Point(35, 834);
+            flowLayoutPanel3.Name = "flowLayoutPanel3";
+            flowLayoutPanel3.Padding = new Padding(0, 0, 10, 0);
+            flowLayoutPanel3.Size = new Size(1021, 220);
+            flowLayoutPanel3.TabIndex = 16;
+            flowLayoutPanel3.WrapContents = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Cambria", 10.8F, FontStyle.Bold);
+            label1.ForeColor = Color.Navy;
+            label1.Location = new Point(572, 35);
+            label1.Name = "label1";
+            label1.Size = new Size(62, 21);
+            label1.TabIndex = 17;
+            label1.Text = "КБЖУ";
+            // 
+            // CaloriesLabel
+            // 
+            CaloriesLabel.AutoSize = true;
+            CaloriesLabel.Font = new Font("Cambria", 10.2F);
+            CaloriesLabel.Location = new Point(572, 132);
+            CaloriesLabel.Name = "CaloriesLabel";
+            CaloriesLabel.Size = new Size(95, 20);
+            CaloriesLabel.TabIndex = 21;
+            CaloriesLabel.Text = "ККалории: ";
+            // 
+            // CarbsLabel
+            // 
+            CarbsLabel.AutoSize = true;
+            CarbsLabel.Font = new Font("Cambria", 10.2F);
+            CarbsLabel.Location = new Point(572, 112);
+            CarbsLabel.Name = "CarbsLabel";
+            CarbsLabel.Size = new Size(83, 20);
+            CarbsLabel.TabIndex = 20;
+            CarbsLabel.Text = "Углеводы";
+            // 
+            // FatsLabel
+            // 
+            FatsLabel.AutoSize = true;
+            FatsLabel.Font = new Font("Cambria", 10.2F);
+            FatsLabel.Location = new Point(572, 92);
+            FatsLabel.Name = "FatsLabel";
+            FatsLabel.Size = new Size(65, 20);
+            FatsLabel.TabIndex = 19;
+            FatsLabel.Text = "Жиры: ";
+            // 
+            // ProteinLabel
+            // 
+            ProteinLabel.AutoSize = true;
+            ProteinLabel.Font = new Font("Cambria", 10.2F);
+            ProteinLabel.Location = new Point(572, 72);
+            ProteinLabel.Name = "ProteinLabel";
+            ProteinLabel.Size = new Size(64, 20);
+            ProteinLabel.TabIndex = 18;
+            ProteinLabel.Text = "Белки: ";
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(1582, 853);
+            BackColor = Color.FromArgb(224, 224, 224);
+            ClientSize = new Size(1100, 1102);
+            Controls.Add(CaloriesLabel);
+            Controls.Add(CarbsLabel);
+            Controls.Add(FatsLabel);
+            Controls.Add(ProteinLabel);
+            Controls.Add(label1);
+            Controls.Add(flowLayoutPanel3);
+            Controls.Add(flowLayoutPanel2);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(EditUserButton);
             Controls.Add(EveningButton);
             Controls.Add(LunchButton);
             Controls.Add(MorningButton);
-            Controls.Add(EveningPanel);
             Controls.Add(label5);
-            Controls.Add(LunchPanel);
-            Controls.Add(MorningPanel);
             Controls.Add(LunchLabel);
             Controls.Add(MorningLabel);
             Controls.Add(ActivityLabel);
@@ -205,7 +289,8 @@
             Controls.Add(HeightLabel);
             Controls.Add(WeightLabel);
             Controls.Add(UserDataLabel);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.None;
+            MaximizeBox = false;
             Name = "MainForm";
             Text = "MainForm";
             Load += MainForm_Load;
@@ -222,13 +307,18 @@
         private Label ActivityLabel;
         private Label MorningLabel;
         private Label LunchLabel;
-        private Panel MorningPanel;
-        private Panel LunchPanel;
-        private Panel EveningPanel;
         private Label label5;
         private Button MorningButton;
         private Button LunchButton;
         private Button EveningButton;
         private Button EditUserButton;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private Label label1;
+        private Label CaloriesLabel;
+        private Label CarbsLabel;
+        private Label FatsLabel;
+        private Label ProteinLabel;
     }
 }

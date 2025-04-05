@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Menu>
+  <Meal type="Morning">
+    <Product>
+      <Name>Яйцо вареное</Name>
+      <Gramms>50</Gramms>
+      <Protein>6</Protein>
+      <Fats>5</Fats>
+      <Carbs>0.5</Carbs>
+      <Calories>70</Calories>
+    </Product>
+    <Product>
+      <Name>Хлеб цельнозерновой</Name>
+      <Gramms>40</Gramms>
+      <Protein>3.5</Protein>
+      <Fats>1</Fats>
+      <Carbs>15</Carbs>
+      <Calories>90</Calories>
+    </Product>
+  </Meal>
+  <Meal type="Lunch">
+    <Product>
+      <Name>Куриная грудка</Name>
+      <Gramms>150</Gramms>
+      <Protein>30</Protein>
+      <Fats>3.5</Fats>
+      <Carbs>0</Carbs>
+      <Calories>165</Calories>
+    </Product>
+    <Product>
+      <Name>Гречка</Name>
+      <Gramms>100</Gramms>
+      <Protein>5</Protein>
+      <Fats>1.5</Fats>
+      <Carbs>25</Carbs>
+      <Calories>110</Calories>
+    </Product>
+    <Product>
+      <Name>Овощной салат</Name>
+      <Gramms>100</Gramms>
+      <Protein>1</Protein>
+      <Fats>0.5</Fats>
+      <Carbs>6</Carbs>
+      <Calories>35</Calories>
+    </Product>
+  </Meal>
+  <Meal type="Dinner">
+    <Product>
+      <Name>Творог</Name>
+      <Gramms>100</Gramms>
+      <Protein>17</Protein>
+      <Fats>5</Fats>
+      <Carbs>3</Carbs>
+      <Calories>120</Calories>
+    </Product>
+    <Product>
+      <Name>Кефир</Name>
+      <Gramms>200</Gramms>
+      <Protein>6</Protein>
+      <Fats>4</Fats>
+      <Carbs>8</Carbs>
+      <Calories>100</Calories>
+    </Product>
+    <Product>
+      <Name>Яблоко</Name>
+      <Gramms>150</Gramms>
+      <Protein>0.5</Protein>
+      <Fats>0.3</Fats>
+      <Carbs>19</Carbs>
+      <Calories>80</Calories>
+    </Product>
+  </Meal>
+</Menu>

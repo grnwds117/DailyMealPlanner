@@ -15,6 +15,7 @@ C:\Users\Alexey\Desktop\DailyMealPlanner\obj\Debug\net8.0-windows\DailyMealPlann
 C:\Users\Alexey\Desktop\DailyMealPlanner\obj\Debug\net8.0-windows\ref\DailyMealPlanner.dll
 C:\Users\Alexey\Desktop\DailyMealPlanner\obj\Debug\net8.0-windows\DailyMealPlanner.MainForm.resources
 C:\Users\Alexey\Desktop\DailyMealPlanner\obj\Debug\net8.0-windows\DailyMealPlanner.Forms.AddMenuForm.resources
-C:\Users\Alexey\Desktop\DailyMealPlanner\obj\Debug\net8.0-windows\DailyMealPlanner.Forms.FoodCard.resources
 C:\Users\Alexey\Desktop\DailyMealPlanner\bin\Debug\net8.0-windows\data.xml
 C:\Users\Alexey\Desktop\DailyMealPlanner\obj\Debug\net8.0-windows\DailyMealPlanner.Forms.EditUserForm.resources
+C:\Users\Alexey\Desktop\DailyMealPlanner\obj\Debug\net8.0-windows\DailyMealPlanner.sourcelink.json
+C:\Users\Alexey\Desktop\DailyMealPlanner\obj\Debug\net8.0-windows\FoodCard.resources
