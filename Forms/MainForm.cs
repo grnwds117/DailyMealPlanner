@@ -54,7 +54,7 @@ namespace DailyMealPlanner
 
         private void RemoveFoodCard(FoodCard foodCard)
         {
-            // Удаление из FlowLayoutPanel
+         
             if (flowLayoutPanel1.Controls.Contains(foodCard))
             {
                 flowLayoutPanel1.Controls.Remove(foodCard);
@@ -72,39 +72,53 @@ namespace DailyMealPlanner
             }
 
 
-            SaveData();
+            _mealService.SaveUserMenu();
         }
 
-        private void SaveData()
+        private double GetCalorieRate()
         {
-            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "usermenu.xml");
-            XElement root = new XElement("Menu");
+            double arm, bmr;
 
-            AddMealToXml(root, "Morning", _mealService.Breakfast.SelectedProducts);
-            AddMealToXml(root, "Lunch", _mealService.Lunch.SelectedProducts);
-            AddMealToXml(root, "Dinner", _mealService.Dinner.SelectedProducts);
+            bmr = 447.593 + 9.247 * currentUser.Weight + 3.098 * currentUser.Height - 4.330 * currentUser.Age;
+            arm = currentUser.Activity == "Низкая" ? 1.2 :
+                currentUser.Activity == "Нормальная" ? 1.375 :
+                currentUser.Activity == "Умеренная" ? 1.5 : 1.725;
 
-            root.Save(filePath);
+            return bmr + arm;
+
         }
 
-        private void AddMealToXml(XElement root, string type, List<Product> products)
+        private void CalculateStats(out double proteins, out double fats, out double carbs, out double calories, out double dailyCalories)
         {
-            XElement mealElement = new XElement("Meal", new XAttribute("type", type));
+            proteins = fats = carbs = calories = dailyCalories = 0;
 
-            foreach (var product in products)
+            var allProducts = _mealService.Breakfast.SelectedProducts
+                              .Concat(_mealService.Lunch.SelectedProducts)
+                              .Concat(_mealService.Dinner.SelectedProducts);
+
+            foreach (var product in allProducts)
             {
-                XElement productElement = new XElement("Product",
-                    new XElement("Name", product.Name),
-                    new XElement("Gramms", product.Gramms),
-                    new XElement("Protein", product.Proteins),
-                    new XElement("Fats", product.Fats),
-                    new XElement("Carbs", product.Carbs),
-                    new XElement("Calories", product.Calories)
-                );
-                mealElement.Add(productElement);
+                proteins += product.Proteins;
+                fats += product.Fats;
+                carbs += product.Carbs;
+                calories += product.Calories;
             }
 
-            root.Add(mealElement);
+            dailyCalories = GetCalorieRate();
+        }
+            
+        private void UpdateStats()
+        {
+            double proteins, fats, carbs, calories, dailyCalories;
+            CalculateStats(out proteins, out fats, out carbs, out calories, out dailyCalories);
+
+            ProteinLabel.Text = $"Белки: {proteins.ToString("F1", CultureInfo.InvariantCulture)} г";
+            FatsLabel.Text = $"Жиры: {fats.ToString("F1", CultureInfo.InvariantCulture)} г";
+            CarbsLabel.Text = $"Углеводы: {carbs.ToString("F1", CultureInfo.InvariantCulture)} г";
+            CaloriesLabel.Text = $"Калории: {calories.ToString("F1", CultureInfo.InvariantCulture)} ккал";
+            DailyCaloriesLabel.Text = $"Дневная норма калорий: {dailyCalories.ToString("F1", CultureInfo.InvariantCulture)} ккал";
+            
+
         }
 
         // Загрузка данных при старте
@@ -122,6 +136,7 @@ namespace DailyMealPlanner
 
             UpdateUserLabels();
             LoadUserMenu();
+            UpdateStats();
 
         }
 
@@ -147,6 +162,7 @@ namespace DailyMealPlanner
             {
                 currentUser = User.LoadFromXml("user.xml");
                 UpdateUserLabels();
+                UpdateStats();
             }
         }
 
@@ -156,6 +172,7 @@ namespace DailyMealPlanner
             if (af.ShowDialog() == DialogResult.OK)
             {
                 LoadUserMenu();
+                UpdateStats();
             }
         }
 
@@ -164,7 +181,8 @@ namespace DailyMealPlanner
             AddMenuForm af = new AddMenuForm(_mealService.MealData, _mealService.Lunch);
             if (af.ShowDialog() == DialogResult.OK)
             {
-                LoadUserMenu(); // 👈 обновляем панель с карточками
+                LoadUserMenu();
+                UpdateStats();
             }
         }
 
@@ -173,7 +191,8 @@ namespace DailyMealPlanner
             AddMenuForm af = new AddMenuForm(_mealService.MealData, _mealService.Dinner);
             if (af.ShowDialog() == DialogResult.OK)
             {
-                LoadUserMenu(); // 👈 обновляем панель с карточками
+                LoadUserMenu();
+                UpdateStats();
             }
         }
     }

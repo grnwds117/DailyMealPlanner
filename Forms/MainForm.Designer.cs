@@ -48,6 +48,8 @@
             CarbsLabel = new Label();
             FatsLabel = new Label();
             ProteinLabel = new Label();
+            DailyCaloriesLabel = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // UserDataLabel
@@ -125,7 +127,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Cambria", 13.8F);
-            label5.Location = new Point(51, 779);
+            label5.Location = new Point(51, 763);
             label5.Name = "label5";
             label5.Size = new Size(70, 27);
             label5.TabIndex = 9;
@@ -133,7 +135,7 @@
             // 
             // MorningButton
             // 
-            MorningButton.BackColor = SystemColors.ActiveCaption;
+            MorningButton.BackColor = SystemColors.Info;
             MorningButton.FlatAppearance.BorderSize = 0;
             MorningButton.FlatStyle = FlatStyle.Flat;
             MorningButton.Font = new Font("Cambria", 10.2F);
@@ -147,7 +149,7 @@
             // 
             // LunchButton
             // 
-            LunchButton.BackColor = SystemColors.ActiveCaption;
+            LunchButton.BackColor = SystemColors.Info;
             LunchButton.FlatAppearance.BorderSize = 0;
             LunchButton.FlatStyle = FlatStyle.Flat;
             LunchButton.Font = new Font("Cambria", 10.2F);
@@ -161,11 +163,11 @@
             // 
             // EveningButton
             // 
-            EveningButton.BackColor = SystemColors.ActiveCaption;
+            EveningButton.BackColor = SystemColors.Info;
             EveningButton.FlatAppearance.BorderSize = 0;
             EveningButton.FlatStyle = FlatStyle.Flat;
             EveningButton.Font = new Font("Cambria", 10.2F);
-            EveningButton.Location = new Point(136, 781);
+            EveningButton.Location = new Point(136, 765);
             EveningButton.Name = "EveningButton";
             EveningButton.Size = new Size(94, 29);
             EveningButton.TabIndex = 13;
@@ -175,16 +177,16 @@
             // 
             // EditUserButton
             // 
-            EditUserButton.BackColor = SystemColors.ActiveCaption;
+            EditUserButton.BackColor = SystemColors.Control;
             EditUserButton.FlatAppearance.BorderSize = 0;
             EditUserButton.FlatStyle = FlatStyle.Flat;
             EditUserButton.Font = new Font("Cambria", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
             EditUserButton.ForeColor = SystemColors.InfoText;
-            EditUserButton.Location = new Point(35, 54);
+            EditUserButton.Location = new Point(35, 59);
             EditUserButton.Name = "EditUserButton";
-            EditUserButton.Size = new Size(135, 57);
+            EditUserButton.Size = new Size(145, 87);
             EditUserButton.TabIndex = 14;
-            EditUserButton.Text = "Редактировать";
+            EditUserButton.Text = "Редактировать информацию";
             EditUserButton.UseVisualStyleBackColor = false;
             EditUserButton.Click += EditUserButton_Click;
             // 
@@ -217,10 +219,10 @@
             flowLayoutPanel3.AutoScroll = true;
             flowLayoutPanel3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel3.BackColor = SystemColors.Info;
-            flowLayoutPanel3.Location = new Point(35, 834);
+            flowLayoutPanel3.Location = new Point(35, 808);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
             flowLayoutPanel3.Padding = new Padding(0, 0, 10, 0);
-            flowLayoutPanel3.Size = new Size(1021, 220);
+            flowLayoutPanel3.Size = new Size(1021, 235);
             flowLayoutPanel3.TabIndex = 16;
             flowLayoutPanel3.WrapContents = false;
             // 
@@ -275,13 +277,35 @@
             ProteinLabel.TabIndex = 18;
             ProteinLabel.Text = "Белки: ";
             // 
+            // DailyCaloriesLabel
+            // 
+            DailyCaloriesLabel.AutoSize = true;
+            DailyCaloriesLabel.Font = new Font("Cambria", 10.2F);
+            DailyCaloriesLabel.Location = new Point(572, 172);
+            DailyCaloriesLabel.Name = "DailyCaloriesLabel";
+            DailyCaloriesLabel.Size = new Size(202, 20);
+            DailyCaloriesLabel.TabIndex = 22;
+            DailyCaloriesLabel.Text = "Дневная норма калорий: ";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Calibri", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label2.Location = new Point(821, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(235, 35);
+            label2.TabIndex = 23;
+            label2.Text = "Daily Meal Planner";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            BackColor = Color.FromArgb(224, 224, 224);
-            ClientSize = new Size(1100, 1102);
+            BackColor = SystemColors.Window;
+            ClientSize = new Size(1100, 1055);
+            Controls.Add(label2);
+            Controls.Add(DailyCaloriesLabel);
             Controls.Add(CaloriesLabel);
             Controls.Add(CarbsLabel);
             Controls.Add(FatsLabel);
@@ -305,6 +329,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm";
             Load += MainForm_Load;
             ResumeLayout(false);
@@ -333,5 +358,7 @@
         private Label CarbsLabel;
         private Label FatsLabel;
         private Label ProteinLabel;
+        private Label DailyCaloriesLabel;
+        private Label label2;
     }
 }
