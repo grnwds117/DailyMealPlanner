@@ -37,6 +37,10 @@ namespace DailyMealPlanner.Business_Layer
                         Calories = double.TryParse(productElement.Element("Calories")?.Value, NumberStyles.Any, CultureInfo.InvariantCulture, out double calories) ? calories : 0
                     };
 
+                    product.Proteins /= 100;
+                    product.Fats /= 100;
+                    product.Carbs /= 100;
+
                     categoryProducts.Add(product);
                 }
 
@@ -98,5 +102,39 @@ namespace DailyMealPlanner.Business_Layer
                 }
             }
         }
+
+        public void SaveUserMenu()
+        {
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "usermenu.xml");
+            XElement root = new XElement("Menu");
+
+            AddMealToXml(root, "Morning", Breakfast.SelectedProducts);
+            AddMealToXml(root, "Lunch", Lunch.SelectedProducts);
+            AddMealToXml(root, "Dinner", Dinner.SelectedProducts);
+
+            root.Save(filePath);
+        }
+
+        private void AddMealToXml(XElement root, string type, List<Product> products)
+        {
+            XElement mealElement = new XElement("Meal", new XAttribute("type", type));
+
+            foreach (var product in products)
+            {
+                XElement productElement = new XElement("Product",
+                    new XElement("Name", product.Name),
+                    new XElement("Gramms", product.Gramms.ToString(CultureInfo.InvariantCulture)),
+                    new XElement("Protein", product.Proteins.ToString(CultureInfo.InvariantCulture)),
+                    new XElement("Fats", product.Fats.ToString(CultureInfo.InvariantCulture)),
+                    new XElement("Carbs", product.Carbs.ToString(CultureInfo.InvariantCulture)),
+                    new XElement("Calories", product.Calories.ToString(CultureInfo.InvariantCulture))
+                );
+
+                mealElement.Add(productElement);
+            }
+
+            root.Add(mealElement);
+        }
+
     }
 }

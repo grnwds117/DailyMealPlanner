@@ -20,6 +20,7 @@ namespace DailyMealPlanner
         public MainForm()
         {
             InitializeComponent();
+            _mealService.LoadData();
             _mealService.LoadUserMenu();
         }
 
@@ -70,7 +71,7 @@ namespace DailyMealPlanner
                 _mealService.Dinner.SelectedProducts.Remove(foodCard.Product);
             }
 
-           
+
             SaveData();
         }
 
@@ -132,10 +133,11 @@ namespace DailyMealPlanner
             ActivityLabel.Text = $"Активность: {currentUser.Activity}";
         }
 
+
         // Сохранение данных перед закрытием
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            _mealService.SaveUserMenu();
         }
 
         public void EditUserButton_Click(object sender, EventArgs e)
@@ -148,5 +150,31 @@ namespace DailyMealPlanner
             }
         }
 
+        private void MorningButton_Click(object sender, EventArgs e)
+        {
+            AddMenuForm af = new AddMenuForm(_mealService.MealData, _mealService.Breakfast);
+            if (af.ShowDialog() == DialogResult.OK)
+            {
+                LoadUserMenu();
+            }
+        }
+
+        private void LunchButton_Click(object sender, EventArgs e)
+        {
+            AddMenuForm af = new AddMenuForm(_mealService.MealData, _mealService.Lunch);
+            if (af.ShowDialog() == DialogResult.OK)
+            {
+                LoadUserMenu(); // 👈 обновляем панель с карточками
+            }
+        }
+
+        private void EveningButton_Click(object sender, EventArgs e)
+        {
+            AddMenuForm af = new AddMenuForm(_mealService.MealData, _mealService.Dinner);
+            if (af.ShowDialog() == DialogResult.OK)
+            {
+                LoadUserMenu(); // 👈 обновляем панель с карточками
+            }
+        }
     }
 }

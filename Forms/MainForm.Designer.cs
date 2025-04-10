@@ -115,7 +115,7 @@
             // 
             LunchLabel.AutoSize = true;
             LunchLabel.Font = new Font("Cambria", 13.8F);
-            LunchLabel.Location = new Point(35, 483);
+            LunchLabel.Location = new Point(58, 481);
             LunchLabel.Name = "LunchLabel";
             LunchLabel.Size = new Size(63, 27);
             LunchLabel.TabIndex = 6;
@@ -125,7 +125,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Cambria", 13.8F);
-            label5.Location = new Point(33, 781);
+            label5.Location = new Point(51, 779);
             label5.Name = "label5";
             label5.Size = new Size(70, 27);
             label5.TabIndex = 9;
@@ -133,45 +133,58 @@
             // 
             // MorningButton
             // 
+            MorningButton.BackColor = SystemColors.ActiveCaption;
+            MorningButton.FlatAppearance.BorderSize = 0;
+            MorningButton.FlatStyle = FlatStyle.Flat;
             MorningButton.Font = new Font("Cambria", 10.2F);
-            MorningButton.Location = new Point(217, 193);
+            MorningButton.Location = new Point(136, 197);
             MorningButton.Name = "MorningButton";
             MorningButton.Size = new Size(94, 29);
             MorningButton.TabIndex = 11;
             MorningButton.Text = "Добавить";
-            MorningButton.UseVisualStyleBackColor = true;
+            MorningButton.UseVisualStyleBackColor = false;
+            MorningButton.Click += MorningButton_Click;
             // 
             // LunchButton
             // 
-            LunchButton.BackColor = Color.Transparent;
+            LunchButton.BackColor = SystemColors.ActiveCaption;
+            LunchButton.FlatAppearance.BorderSize = 0;
+            LunchButton.FlatStyle = FlatStyle.Flat;
             LunchButton.Font = new Font("Cambria", 10.2F);
-            LunchButton.Location = new Point(219, 481);
+            LunchButton.Location = new Point(136, 481);
             LunchButton.Name = "LunchButton";
             LunchButton.Size = new Size(94, 29);
             LunchButton.TabIndex = 12;
             LunchButton.Text = "Добавить";
             LunchButton.UseVisualStyleBackColor = false;
+            LunchButton.Click += LunchButton_Click;
             // 
             // EveningButton
             // 
-            EveningButton.BackColor = Color.Transparent;
+            EveningButton.BackColor = SystemColors.ActiveCaption;
+            EveningButton.FlatAppearance.BorderSize = 0;
+            EveningButton.FlatStyle = FlatStyle.Flat;
             EveningButton.Font = new Font("Cambria", 10.2F);
-            EveningButton.Location = new Point(217, 779);
+            EveningButton.Location = new Point(136, 781);
             EveningButton.Name = "EveningButton";
             EveningButton.Size = new Size(94, 29);
             EveningButton.TabIndex = 13;
             EveningButton.Text = "Добавить";
             EveningButton.UseVisualStyleBackColor = false;
+            EveningButton.Click += EveningButton_Click;
             // 
             // EditUserButton
             // 
-            EditUserButton.BackColor = Color.Transparent;
-            EditUserButton.Font = new Font("Calibri", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            EditUserButton.BackColor = SystemColors.ActiveCaption;
+            EditUserButton.FlatAppearance.BorderSize = 0;
+            EditUserButton.FlatStyle = FlatStyle.Flat;
+            EditUserButton.Font = new Font("Cambria", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            EditUserButton.ForeColor = SystemColors.InfoText;
             EditUserButton.Location = new Point(35, 54);
             EditUserButton.Name = "EditUserButton";
             EditUserButton.Size = new Size(135, 57);
             EditUserButton.TabIndex = 14;
-            EditUserButton.Text = "Редактировать информацию";
+            EditUserButton.Text = "Редактировать";
             EditUserButton.UseVisualStyleBackColor = false;
             EditUserButton.Click += EditUserButton_Click;
             // 
@@ -179,7 +192,7 @@
             // 
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flowLayoutPanel1.BackColor = Color.BurlyWood;
+            flowLayoutPanel1.BackColor = SystemColors.Info;
             flowLayoutPanel1.Location = new Point(35, 232);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Padding = new Padding(0, 0, 10, 0);
@@ -191,7 +204,7 @@
             // 
             flowLayoutPanel2.AutoScroll = true;
             flowLayoutPanel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flowLayoutPanel2.BackColor = Color.BurlyWood;
+            flowLayoutPanel2.BackColor = SystemColors.Info;
             flowLayoutPanel2.Location = new Point(37, 522);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Padding = new Padding(0, 0, 10, 0);
@@ -203,7 +216,7 @@
             // 
             flowLayoutPanel3.AutoScroll = true;
             flowLayoutPanel3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flowLayoutPanel3.BackColor = Color.BurlyWood;
+            flowLayoutPanel3.BackColor = SystemColors.Info;
             flowLayoutPanel3.Location = new Point(35, 834);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
             flowLayoutPanel3.Padding = new Padding(0, 0, 10, 0);
@@ -289,7 +302,7 @@
             Controls.Add(HeightLabel);
             Controls.Add(WeightLabel);
             Controls.Add(UserDataLabel);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "MainForm";
             Text = "MainForm";

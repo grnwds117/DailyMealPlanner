@@ -19,3 +19,5 @@ C:\Users\Alexey\Desktop\DailyMealPlanner\bin\Debug\net8.0-windows\data.xml
 C:\Users\Alexey\Desktop\DailyMealPlanner\obj\Debug\net8.0-windows\DailyMealPlanner.Forms.EditUserForm.resources
 C:\Users\Alexey\Desktop\DailyMealPlanner\obj\Debug\net8.0-windows\DailyMealPlanner.sourcelink.json
 C:\Users\Alexey\Desktop\DailyMealPlanner\obj\Debug\net8.0-windows\FoodCard.resources
+C:\Users\Alexey\Desktop\DailyMealPlanner\obj\Debug\net8.0-windows\DailyMealPlanner.Properties.Resources.resources
+C:\Users\Alexey\Desktop\DailyMealPlanner\obj\Debug\net8.0-windows\DailyMealPlanner.Forms.CollapsiblePanel.resources

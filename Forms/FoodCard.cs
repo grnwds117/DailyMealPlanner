@@ -1,16 +1,23 @@
 ﻿using DailyMealPlanner.Business_Layer;
+using System;
+using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 public class FoodCard : UserControl
 {
     private Product _product;
-    private Font _boldFont = new Font("Arial", 10, FontStyle.Bold);
-    private Font _regularFont = new Font("Arial", 9);
+    private bool isSelected;
+
+    private readonly Font _boldFont = new Font("Arial", 10, FontStyle.Bold);
+    private readonly Font _regularFont = new Font("Arial", 9);
+    private readonly Color _defaultBgColor = Color.FromArgb(240, 240, 240);
     private const int LineHeight = 20;
     private const int StartY = 15;
     private const int ValueIndent = 80;
     private const int CornerRadius = 15;
-    private readonly Color _bgColor = Color.FromArgb(240, 240, 240);
+
+    private Button closeButton;
 
     public Product Product
     {
@@ -22,15 +29,14 @@ public class FoodCard : UserControl
         }
     }
 
-    // Добавляем событие для удаления продукта
-    public event Action<FoodCard> RemoveFoodCard;
+    public bool IsSelected => isSelected;
 
-    private Button closeButton;
+    public event Action<FoodCard> RemoveFoodCard;
 
     public FoodCard()
     {
         Size = new Size(180, 150);
-        BackColor = Color.Transparent;
+        BackColor = _defaultBgColor;
         Padding = new Padding(10);
         DoubleBuffered = true;
 
@@ -40,16 +46,27 @@ public class FoodCard : UserControl
             Text = "X",
             BackColor = Color.Red,
             ForeColor = Color.White,
-            FlatStyle = FlatStyle.Flat
+            FlatStyle = FlatStyle.Flat,
+            Anchor = AnchorStyles.Bottom | AnchorStyles.Right
         };
         closeButton.FlatAppearance.BorderSize = 0;
-
-        // Устанавливаем кнопку в правый нижний угол
         closeButton.Location = new Point(Width - 30, Height - 30);
-
         closeButton.Click += CloseButton_Click;
 
         Controls.Add(closeButton);
+
+        // Подписка на клик по карточке (один раз, в конструкторе)
+        this.Click += FoodCard_Click;
+        foreach (Control ctrl in Controls)
+        {
+            ctrl.Click += FoodCard_Click; // Чтобы клик по кнопке или другим элементам тоже работал
+        }
+    }
+
+    private void FoodCard_Click(object sender, EventArgs e)
+    {
+        isSelected = !isSelected;
+        BackColor = isSelected ? Color.LightBlue : _defaultBgColor;
     }
 
     private void CloseButton_Click(object sender, EventArgs e)
@@ -63,43 +80,42 @@ public class FoodCard : UserControl
         Graphics g = e.Graphics;
         g.SmoothingMode = SmoothingMode.AntiAlias;
 
-        // Рисуем прямоугольник с закругленными углами
+        // Закруглённый фон
         using (var path = GetRoundedRectanglePath(new Rectangle(0, 0, Width - 1, Height - 1), CornerRadius))
         {
-            using (var bgBrush = new SolidBrush(_bgColor))
+            using (var bgBrush = new SolidBrush(BackColor))
             {
                 g.FillPath(bgBrush, path);
             }
+
             using (var borderPen = new Pen(Color.LightGray, 1))
             {
                 g.DrawPath(borderPen, path);
             }
         }
 
-        // Заголовок продукта
-        string title = _product != null ? $"# {_product.Name} #" : "# Product #";
+        string title = _product != null ? $"# {_product.Name} #" : "# Продукт #";
         SizeF titleSize = g.MeasureString(title, _boldFont);
         float titleX = (Width - titleSize.Width) / 2;
         g.DrawString(title, _boldFont, Brushes.Black, titleX, StartY);
 
-        // Параметры продукта
         int currentY = StartY + LineHeight + 5;
-
-        DrawLabelAndValue(g, "Масса (г):", "", ref currentY);
-        DrawLabelAndValue(g, "Белки:", "", ref currentY);
-        DrawLabelAndValue(g, "Углеводы:", "", ref currentY);
-        DrawLabelAndValue(g, "Жиры:", "", ref currentY);
-        DrawLabelAndValue(g, "Калории:", "", ref currentY);
 
         if (_product != null)
         {
-            currentY = StartY + LineHeight + 5;
-            DrawLabelAndValue(g, "", "100", ref currentY); // Масса по умолчанию 100г
-            DrawLabelAndValue(g, "", _product.Proteins.ToString("0.0"), ref currentY);
-            DrawLabelAndValue(g, "", _product.Carbs.ToString("0.0"), ref currentY);
-            DrawLabelAndValue(g, "", _product.Fats.ToString("0.0"), ref currentY);
-            DrawLabelAndValue(g, "", _product.Calories.ToString(), ref currentY);
+            DrawLabelAndValue(g, "Масса (г):", "100", ref currentY);
+            DrawLabelAndValue(g, "Белки:", _product.Proteins.ToString("0.0"), ref currentY);
+            DrawLabelAndValue(g, "Углеводы:", _product.Carbs.ToString("0.0"), ref currentY);
+            DrawLabelAndValue(g, "Жиры:", _product.Fats.ToString("0.0"), ref currentY);
+            DrawLabelAndValue(g, "Калории:", _product.Calories.ToString(), ref currentY);
         }
+    }
+
+    private void DrawLabelAndValue(Graphics g, string label, string value, ref int yPos)
+    {
+        g.DrawString(label, _regularFont, Brushes.Black, Padding.Left, yPos);
+        g.DrawString(value, _regularFont, Brushes.Black, ValueIndent, yPos);
+        yPos += LineHeight;
     }
 
     private GraphicsPath GetRoundedRectanglePath(Rectangle rect, int radius)
@@ -111,20 +127,5 @@ public class FoodCard : UserControl
         path.AddArc(rect.X, rect.Bottom - radius * 2, radius * 2, radius * 2, 90, 90);
         path.CloseFigure();
         return path;
-    }
-
-    private void DrawLabelAndValue(Graphics g, string label, string value, ref int yPos)
-    {
-        if (!string.IsNullOrEmpty(label))
-        {
-            g.DrawString(label, _regularFont, Brushes.Black, Padding.Left, yPos);
-        }
-
-        if (!string.IsNullOrEmpty(value))
-        {
-            g.DrawString(value, _regularFont, Brushes.Black, ValueIndent, yPos);
-        }
-
-        yPos += LineHeight;
     }
 }
