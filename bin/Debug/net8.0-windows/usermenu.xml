@@ -2,72 +2,80 @@
 <Menu>
   <Meal type="Morning">
     <Product>
-      <Name>Яйцо вареное</Name>
-      <Gramms>50</Gramms>
-      <Protein>6</Protein>
-      <Fats>5</Fats>
-      <Carbs>0.5</Carbs>
-      <Calories>70</Calories>
+      <Name>Творог жирный 18%</Name>
+      <Gramms>100</Gramms>
+      <Protein>14</Protein>
+      <Fats>18</Fats>
+      <Carbs>2.8</Carbs>
+      <Calories>232</Calories>
     </Product>
     <Product>
-      <Name>Хлеб цельнозерновой</Name>
-      <Gramms>40</Gramms>
-      <Protein>3.5</Protein>
-      <Fats>1</Fats>
-      <Carbs>15</Carbs>
-      <Calories>90</Calories>
+      <Name>Батон простой</Name>
+      <Gramms>100</Gramms>
+      <Protein>8</Protein>
+      <Fats>0.9</Fats>
+      <Carbs>48.9</Carbs>
+      <Calories>235</Calories>
+    </Product>
+    <Product>
+      <Name>Колбаса докторская</Name>
+      <Gramms>100</Gramms>
+      <Protein>12.8</Protein>
+      <Fats>22.2</Fats>
+      <Carbs>1.5</Carbs>
+      <Calories>257</Calories>
     </Product>
   </Meal>
   <Meal type="Lunch">
     <Product>
-      <Name>Куриная грудка</Name>
-      <Gramms>150</Gramms>
-      <Protein>30</Protein>
-      <Fats>3.5</Fats>
-      <Carbs>0</Carbs>
-      <Calories>165</Calories>
+      <Name>Блины</Name>
+      <Gramms>100</Gramms>
+      <Protein>5.1</Protein>
+      <Fats>3.1</Fats>
+      <Carbs>34.3</Carbs>
+      <Calories>186</Calories>
     </Product>
     <Product>
-      <Name>Гречка</Name>
+      <Name>Компот из мандаринов</Name>
       <Gramms>100</Gramms>
-      <Protein>5</Protein>
-      <Fats>1.5</Fats>
-      <Carbs>25</Carbs>
-      <Calories>110</Calories>
+      <Protein>0.1</Protein>
+      <Fats>0</Fats>
+      <Carbs>18.1</Carbs>
+      <Calories>69</Calories>
     </Product>
     <Product>
-      <Name>Овощной салат</Name>
+      <Name>Белые грибы сушеные</Name>
       <Gramms>100</Gramms>
-      <Protein>1</Protein>
-      <Fats>0.5</Fats>
-      <Carbs>6</Carbs>
-      <Calories>35</Calories>
+      <Protein>20.1</Protein>
+      <Fats>4.8</Fats>
+      <Carbs>7.6</Carbs>
+      <Calories>152</Calories>
     </Product>
   </Meal>
   <Meal type="Dinner">
     <Product>
-      <Name>Творог</Name>
+      <Name>Пельмени отварные</Name>
       <Gramms>100</Gramms>
-      <Protein>17</Protein>
-      <Fats>5</Fats>
-      <Carbs>3</Carbs>
-      <Calories>120</Calories>
+      <Protein>10</Protein>
+      <Fats>14</Fats>
+      <Carbs>14.5</Carbs>
+      <Calories>224</Calories>
     </Product>
     <Product>
-      <Name>Кефир</Name>
-      <Gramms>200</Gramms>
-      <Protein>6</Protein>
-      <Fats>4</Fats>
-      <Carbs>8</Carbs>
-      <Calories>100</Calories>
+      <Name>Апельсиновый сок</Name>
+      <Gramms>100</Gramms>
+      <Protein>0.7</Protein>
+      <Fats>0</Fats>
+      <Carbs>12.8</Carbs>
+      <Calories>54</Calories>
     </Product>
     <Product>
-      <Name>Яблоко</Name>
-      <Gramms>150</Gramms>
-      <Protein>0.5</Protein>
-      <Fats>0.3</Fats>
-      <Carbs>19</Carbs>
-      <Calories>80</Calories>
+      <Name>Баранина отварная</Name>
+      <Gramms>100</Gramms>
+      <Protein>22</Protein>
+      <Fats>17.2</Fats>
+      <Carbs>0</Carbs>
+      <Calories>243</Calories>
     </Product>
   </Meal>
 </Menu>

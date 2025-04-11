@@ -55,11 +55,10 @@ public class FoodCard : UserControl
 
         Controls.Add(closeButton);
 
-        // Подписка на клик по карточке (один раз, в конструкторе)
         this.Click += FoodCard_Click;
         foreach (Control ctrl in Controls)
         {
-            ctrl.Click += FoodCard_Click; // Чтобы клик по кнопке или другим элементам тоже работал
+            ctrl.Click += FoodCard_Click; 
         }
     }
 

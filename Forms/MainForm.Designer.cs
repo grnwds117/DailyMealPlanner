@@ -57,7 +57,7 @@
             UserDataLabel.AutoSize = true;
             UserDataLabel.Font = new Font("Cambria", 10.8F, FontStyle.Bold);
             UserDataLabel.ForeColor = Color.Navy;
-            UserDataLabel.Location = new Point(201, 35);
+            UserDataLabel.Location = new Point(200, 48);
             UserDataLabel.Name = "UserDataLabel";
             UserDataLabel.Size = new Size(287, 21);
             UserDataLabel.TabIndex = 0;
@@ -67,7 +67,7 @@
             // 
             WeightLabel.AutoSize = true;
             WeightLabel.Font = new Font("Cambria", 10.2F);
-            WeightLabel.Location = new Point(201, 72);
+            WeightLabel.Location = new Point(201, 69);
             WeightLabel.Name = "WeightLabel";
             WeightLabel.Size = new Size(43, 20);
             WeightLabel.TabIndex = 1;
@@ -77,7 +77,7 @@
             // 
             HeightLabel.AutoSize = true;
             HeightLabel.Font = new Font("Cambria", 10.2F);
-            HeightLabel.Location = new Point(201, 92);
+            HeightLabel.Location = new Point(201, 89);
             HeightLabel.Name = "HeightLabel";
             HeightLabel.Size = new Size(88, 20);
             HeightLabel.TabIndex = 2;
@@ -87,7 +87,7 @@
             // 
             AgeLabel.AutoSize = true;
             AgeLabel.Font = new Font("Cambria", 10.2F);
-            AgeLabel.Location = new Point(201, 112);
+            AgeLabel.Location = new Point(201, 109);
             AgeLabel.Name = "AgeLabel";
             AgeLabel.Size = new Size(78, 20);
             AgeLabel.TabIndex = 3;
@@ -97,7 +97,7 @@
             // 
             ActivityLabel.AutoSize = true;
             ActivityLabel.Font = new Font("Cambria", 10.2F);
-            ActivityLabel.Location = new Point(201, 132);
+            ActivityLabel.Location = new Point(201, 129);
             ActivityLabel.Name = "ActivityLabel";
             ActivityLabel.Size = new Size(110, 20);
             ActivityLabel.TabIndex = 4;
@@ -177,14 +177,13 @@
             // 
             // EditUserButton
             // 
-            EditUserButton.BackColor = SystemColors.Control;
-            EditUserButton.FlatAppearance.BorderSize = 0;
+            EditUserButton.BackColor = Color.Transparent;
             EditUserButton.FlatStyle = FlatStyle.Flat;
             EditUserButton.Font = new Font("Cambria", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
             EditUserButton.ForeColor = SystemColors.InfoText;
-            EditUserButton.Location = new Point(35, 59);
+            EditUserButton.Location = new Point(35, 69);
             EditUserButton.Name = "EditUserButton";
-            EditUserButton.Size = new Size(145, 87);
+            EditUserButton.Size = new Size(145, 80);
             EditUserButton.TabIndex = 14;
             EditUserButton.Text = "Редактировать информацию";
             EditUserButton.UseVisualStyleBackColor = false;
@@ -195,6 +194,7 @@
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel1.BackColor = SystemColors.Info;
+            flowLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
             flowLayoutPanel1.Location = new Point(35, 232);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Padding = new Padding(0, 0, 10, 0);
@@ -207,6 +207,7 @@
             flowLayoutPanel2.AutoScroll = true;
             flowLayoutPanel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel2.BackColor = SystemColors.Info;
+            flowLayoutPanel2.BorderStyle = BorderStyle.FixedSingle;
             flowLayoutPanel2.Location = new Point(37, 522);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Padding = new Padding(0, 0, 10, 0);
@@ -219,6 +220,7 @@
             flowLayoutPanel3.AutoScroll = true;
             flowLayoutPanel3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel3.BackColor = SystemColors.Info;
+            flowLayoutPanel3.BorderStyle = BorderStyle.FixedSingle;
             flowLayoutPanel3.Location = new Point(35, 808);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
             flowLayoutPanel3.Padding = new Padding(0, 0, 10, 0);
@@ -231,7 +233,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Cambria", 10.8F, FontStyle.Bold);
             label1.ForeColor = Color.Navy;
-            label1.Location = new Point(572, 35);
+            label1.Location = new Point(537, 49);
             label1.Name = "label1";
             label1.Size = new Size(62, 21);
             label1.TabIndex = 17;
@@ -241,7 +243,7 @@
             // 
             CaloriesLabel.AutoSize = true;
             CaloriesLabel.Font = new Font("Cambria", 10.2F);
-            CaloriesLabel.Location = new Point(572, 132);
+            CaloriesLabel.Location = new Point(537, 140);
             CaloriesLabel.Name = "CaloriesLabel";
             CaloriesLabel.Size = new Size(95, 20);
             CaloriesLabel.TabIndex = 21;
@@ -251,7 +253,7 @@
             // 
             CarbsLabel.AutoSize = true;
             CarbsLabel.Font = new Font("Cambria", 10.2F);
-            CarbsLabel.Location = new Point(572, 112);
+            CarbsLabel.Location = new Point(537, 120);
             CarbsLabel.Name = "CarbsLabel";
             CarbsLabel.Size = new Size(83, 20);
             CarbsLabel.TabIndex = 20;
@@ -261,7 +263,7 @@
             // 
             FatsLabel.AutoSize = true;
             FatsLabel.Font = new Font("Cambria", 10.2F);
-            FatsLabel.Location = new Point(572, 92);
+            FatsLabel.Location = new Point(537, 100);
             FatsLabel.Name = "FatsLabel";
             FatsLabel.Size = new Size(65, 20);
             FatsLabel.TabIndex = 19;
@@ -271,7 +273,7 @@
             // 
             ProteinLabel.AutoSize = true;
             ProteinLabel.Font = new Font("Cambria", 10.2F);
-            ProteinLabel.Location = new Point(572, 72);
+            ProteinLabel.Location = new Point(537, 80);
             ProteinLabel.Name = "ProteinLabel";
             ProteinLabel.Size = new Size(64, 20);
             ProteinLabel.TabIndex = 18;
@@ -281,7 +283,7 @@
             // 
             DailyCaloriesLabel.AutoSize = true;
             DailyCaloriesLabel.Font = new Font("Cambria", 10.2F);
-            DailyCaloriesLabel.Location = new Point(572, 172);
+            DailyCaloriesLabel.Location = new Point(201, 149);
             DailyCaloriesLabel.Name = "DailyCaloriesLabel";
             DailyCaloriesLabel.Size = new Size(202, 20);
             DailyCaloriesLabel.TabIndex = 22;
@@ -290,10 +292,12 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Calibri", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label2.Location = new Point(821, 9);
+            label2.BorderStyle = BorderStyle.FixedSingle;
+            label2.FlatStyle = FlatStyle.Flat;
+            label2.Font = new Font("Cambria", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label2.Location = new Point(794, 21);
             label2.Name = "label2";
-            label2.Size = new Size(235, 35);
+            label2.Size = new Size(262, 35);
             label2.TabIndex = 23;
             label2.Text = "Daily Meal Planner";
             // 

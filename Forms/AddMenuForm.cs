@@ -35,7 +35,6 @@ namespace DailyMealPlanner.Forms
                     Margin = new Padding(5)
                 };
 
-                // Заполняем карточками продуктов
                 FlowLayoutPanel productPanel = new FlowLayoutPanel
                 {
                     Dock = DockStyle.Top,
@@ -55,7 +54,6 @@ namespace DailyMealPlanner.Forms
                         Margin = new Padding(5)
                     };
 
-                    // Подписка на клик — выбираем или убираем
                     foodCard.Click += (s, e) =>
                     {
                         if (foodCard.IsSelected)
@@ -67,6 +65,8 @@ namespace DailyMealPlanner.Forms
                         {
                             selectedProducts.Remove(product);
                         }
+
+                        UpdateSelectedProductsPanel();
                     };
 
                     productPanel.Controls.Add(foodCard);
@@ -76,6 +76,24 @@ namespace DailyMealPlanner.Forms
                 flowLayoutPanel1.Controls.Add(collapsiblePanel);
             }
         }
+
+        private void UpdateSelectedProductsPanel()
+        {
+            flowLayoutPanel3.Controls.Clear(); 
+
+            foreach (var product in selectedProducts)
+            {
+                var label = new Label
+                {
+                    Text = product.Name,
+                    AutoSize = true,
+                    Font = new Font("Segoe UI", 10),
+                    Margin = new Padding(5)
+                };
+                flowLayoutPanel3.Controls.Add(label);
+            }
+        }
+
 
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
@@ -122,6 +140,8 @@ namespace DailyMealPlanner.Forms
                             {
                                 selectedProducts.Remove(product);
                             }
+
+                            UpdateSelectedProductsPanel();
                         };
 
                         flowLayoutPanel2.Controls.Add(foodCard);

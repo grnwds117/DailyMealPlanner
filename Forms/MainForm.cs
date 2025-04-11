@@ -16,7 +16,7 @@ namespace DailyMealPlanner
         private User currentUser;
         private string userFilePath = "user.xml";
 
-        // Конструктор теперь принимает путь к файлу для MealService
+       
         public MainForm()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace DailyMealPlanner
             foreach (var product in _mealService.Breakfast.SelectedProducts)
             {
                 var card = new FoodCard { Product = product };
-                card.RemoveFoodCard += RemoveFoodCard; // Подписываемся на событие
+                card.RemoveFoodCard += RemoveFoodCard;
                 flowLayoutPanel1.Controls.Add(card);
             }
 
@@ -73,13 +73,14 @@ namespace DailyMealPlanner
 
 
             _mealService.SaveUserMenu();
+            UpdateStats();
         }
 
         private double GetCalorieRate()
         {
             double arm, bmr;
 
-            bmr = 447.593 + 9.247 * currentUser.Weight + 3.098 * currentUser.Height - 4.330 * currentUser.Age;
+            bmr = 1022.593 + 9.247 * currentUser.Weight + 3.098 * currentUser.Height - 4.330 * currentUser.Age;
             arm = currentUser.Activity == "Низкая" ? 1.2 :
                 currentUser.Activity == "Нормальная" ? 1.375 :
                 currentUser.Activity == "Умеренная" ? 1.5 : 1.725;
@@ -130,8 +131,8 @@ namespace DailyMealPlanner
             }
             else
             {
-                currentUser = new User(); // Дефолтные значения
-                currentUser.SaveToXml(userFilePath); // Создаём файл
+                currentUser = new User(); 
+                currentUser.SaveToXml(userFilePath);
             }
 
             UpdateUserLabels();
@@ -149,7 +150,7 @@ namespace DailyMealPlanner
         }
 
 
-        // Сохранение данных перед закрытием
+      
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             _mealService.SaveUserMenu();

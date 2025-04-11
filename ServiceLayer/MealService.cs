@@ -59,13 +59,11 @@ namespace DailyMealPlanner.Business_Layer
 
             if (!File.Exists(filePath))
             {
-                // Если файл не существует, просто возвращаем
                 return;
             }
 
             XElement root = XElement.Load(filePath);
 
-            // Очищаем текущие данные перед загрузкой
             Breakfast.SelectedProducts.Clear();
             Lunch.SelectedProducts.Clear();
             Dinner.SelectedProducts.Clear();
@@ -86,7 +84,6 @@ namespace DailyMealPlanner.Business_Layer
                         Calories = double.TryParse(productElement.Element("Calories")?.Value, NumberStyles.Any, CultureInfo.InvariantCulture, out double calories) ? calories : 0
                     };
 
-                    // Распределяем продукт по соответствующему времени приема пищи
                     switch (type)
                     {
                         case "Morning":

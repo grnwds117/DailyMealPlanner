@@ -53,7 +53,7 @@ namespace DailyMealPlanner.Forms
 
             if (!isCollapsed)
             {
-                contentPanel.Height = 300; // 👈 фиксируем высоту, чтобы AutoScroll работал
+                contentPanel.Height = 300; 
                 this.Height = toggleButton.Height + contentPanel.Height;
             }
             else

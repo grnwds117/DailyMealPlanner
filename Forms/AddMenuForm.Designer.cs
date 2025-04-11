@@ -36,6 +36,8 @@
             label1 = new Label();
             SearchButton = new Button();
             flowLayoutPanel2 = new FlowLayoutPanel();
+            label2 = new Label();
+            flowLayoutPanel3 = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)categoryBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -44,6 +46,7 @@
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = SystemColors.Info;
+            flowLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
             flowLayoutPanel1.DataBindings.Add(new Binding("DataContext", categoryBindingSource, "", true));
             flowLayoutPanel1.Location = new Point(25, 28);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -56,9 +59,9 @@
             // 
             // ConfirmButton
             // 
-            ConfirmButton.Location = new Point(844, 28);
+            ConfirmButton.Location = new Point(1187, 571);
             ConfirmButton.Name = "ConfirmButton";
-            ConfirmButton.Size = new Size(213, 64);
+            ConfirmButton.Size = new Size(208, 29);
             ConfirmButton.TabIndex = 1;
             ConfirmButton.Text = "Подтвердить и добавить";
             ConfirmButton.UseVisualStyleBackColor = true;
@@ -66,7 +69,7 @@
             // 
             // SearchTextBox
             // 
-            SearchTextBox.Location = new Point(844, 136);
+            SearchTextBox.Location = new Point(856, 54);
             SearchTextBox.Name = "SearchTextBox";
             SearchTextBox.Size = new Size(226, 27);
             SearchTextBox.TabIndex = 2;
@@ -74,7 +77,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(843, 110);
+            label1.Location = new Point(855, 28);
             label1.Name = "label1";
             label1.Size = new Size(101, 20);
             label1.TabIndex = 3;
@@ -82,7 +85,7 @@
             // 
             // SearchButton
             // 
-            SearchButton.Location = new Point(1076, 136);
+            SearchButton.Location = new Point(1116, 52);
             SearchButton.Name = "SearchButton";
             SearchButton.Size = new Size(94, 29);
             SearchButton.TabIndex = 4;
@@ -93,23 +96,47 @@
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.AutoScroll = true;
-            flowLayoutPanel2.Location = new Point(848, 185);
+            flowLayoutPanel2.BackColor = SystemColors.Info;
+            flowLayoutPanel2.BorderStyle = BorderStyle.FixedSingle;
+            flowLayoutPanel2.Location = new Point(855, 103);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(540, 626);
+            flowLayoutPanel2.Size = new Size(540, 441);
             flowLayoutPanel2.TabIndex = 5;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BorderStyle = BorderStyle.FixedSingle;
+            label2.Location = new Point(855, 574);
+            label2.Name = "label2";
+            label2.Size = new Size(143, 22);
+            label2.TabIndex = 6;
+            label2.Text = "Выбранные блюда";
+            // 
+            // flowLayoutPanel3
+            // 
+            flowLayoutPanel3.BorderStyle = BorderStyle.FixedSingle;
+            flowLayoutPanel3.Location = new Point(855, 606);
+            flowLayoutPanel3.Name = "flowLayoutPanel3";
+            flowLayoutPanel3.Size = new Size(540, 205);
+            flowLayoutPanel3.TabIndex = 8;
             // 
             // AddMenuForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1422, 853);
+            Controls.Add(flowLayoutPanel3);
+            Controls.Add(label2);
+            Controls.Add(ConfirmButton);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(SearchButton);
             Controls.Add(label1);
             Controls.Add(SearchTextBox);
-            Controls.Add(ConfirmButton);
             Controls.Add(flowLayoutPanel1);
+            MaximizeBox = false;
             Name = "AddMenuForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddMenuForm";
             ((System.ComponentModel.ISupportInitialize)categoryBindingSource).EndInit();
             ResumeLayout(false);
@@ -125,5 +152,7 @@
         private Label label1;
         private Button SearchButton;
         private FlowLayoutPanel flowLayoutPanel2;
+        private Label label2;
+        private FlowLayoutPanel flowLayoutPanel3;
     }
 }
