@@ -76,6 +76,7 @@ namespace DailyMealPlanner
             UpdateStats();
         }
 
+        // Изначальная формула слегка изменена (к значению bmr добавлено 
         private double GetCalorieRate()
         {
             double arm, bmr;
@@ -122,7 +123,6 @@ namespace DailyMealPlanner
 
         }
 
-        // Загрузка данных при старте
         private void MainForm_Load(object sender, EventArgs e)
         {
             if (File.Exists(userFilePath))

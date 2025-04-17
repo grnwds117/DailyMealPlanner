@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
-using System.Windows.Forms;
+﻿// 
+// Кастомный виджет в виде сворачивающейся панели 
+// 
 
 namespace DailyMealPlanner.Forms
 {
@@ -40,7 +36,6 @@ namespace DailyMealPlanner.Forms
                 AutoScroll = true
             };
 
-
             this.Controls.Add(contentPanel);
             this.Controls.Add(toggleButton);
             this.Height = toggleButton.Height;
@@ -61,6 +56,5 @@ namespace DailyMealPlanner.Forms
                 this.Height = toggleButton.Height;
             }
         }
-
     }
 }

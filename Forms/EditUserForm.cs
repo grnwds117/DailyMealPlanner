@@ -12,7 +12,6 @@ namespace DailyMealPlanner.Forms
 {
     public partial class EditUserForm : Form
     {
-
         private User currentUser;
 
         public EditUserForm(User user)

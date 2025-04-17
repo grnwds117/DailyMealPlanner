@@ -4,6 +4,9 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
+// 
+// Кастомный виджет для отображения информации о продукте в виде карточки
+//
 public class FoodCard : UserControl
 {
     private Product _product;
@@ -58,7 +61,7 @@ public class FoodCard : UserControl
         this.Click += FoodCard_Click;
         foreach (Control ctrl in Controls)
         {
-            ctrl.Click += FoodCard_Click; 
+            ctrl.Click += FoodCard_Click;
         }
     }
 
@@ -79,7 +82,6 @@ public class FoodCard : UserControl
         Graphics g = e.Graphics;
         g.SmoothingMode = SmoothingMode.AntiAlias;
 
-        // Закруглённый фон
         using (var path = GetRoundedRectanglePath(new Rectangle(0, 0, Width - 1, Height - 1), CornerRadius))
         {
             using (var bgBrush = new SolidBrush(BackColor))
@@ -93,10 +95,12 @@ public class FoodCard : UserControl
             }
         }
 
-        string title = _product != null ? $"# {_product.Name} #" : "# Продукт #";
-        SizeF titleSize = g.MeasureString(title, _boldFont);
+        string title = _product != null ? _product.Name : "Продукт";
+        string trimmedTitle = TrimTextToFit(g, title, _boldFont, Width - Padding.Left - Padding.Right);
+
+        SizeF titleSize = g.MeasureString(trimmedTitle, _boldFont);
         float titleX = (Width - titleSize.Width) / 2;
-        g.DrawString(title, _boldFont, Brushes.Black, titleX, StartY);
+        g.DrawString(trimmedTitle, _boldFont, Brushes.Black, titleX, StartY);
 
         int currentY = StartY + LineHeight + 5;
 
@@ -108,6 +112,22 @@ public class FoodCard : UserControl
             DrawLabelAndValue(g, "Жиры:", _product.Fats.ToString("0.0"), ref currentY);
             DrawLabelAndValue(g, "Калории:", _product.Calories.ToString(), ref currentY);
         }
+    }
+
+    private string TrimTextToFit(Graphics g, string text, Font font, int maxWidth)
+    {
+        string ellipsis = "...";
+        if (g.MeasureString(text, font).Width <= maxWidth)
+            return text;
+
+        for (int i = text.Length - 1; i > 0; i--)
+        {
+            string subText = text.Substring(0, i) + ellipsis;
+            if (g.MeasureString(subText, font).Width <= maxWidth)
+                return subText;
+        }
+
+        return ellipsis; // если даже одна буква не помещается
     }
 
     private void DrawLabelAndValue(Graphics g, string label, string value, ref int yPos)

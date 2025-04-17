@@ -8,7 +8,6 @@ public class User
     public int Age { get; set; }
     public string Activity { get; set; }
 
-    // Конструктор по умолчанию (необходим для LoadFromXml)
     public User()
     {
         Weight = 0;
@@ -17,7 +16,6 @@ public class User
         Activity = "";
     }
 
-    // Основной конструктор
     public User(int weight, int height, int age, string activity)
     {
         Weight = weight;
@@ -42,7 +40,7 @@ public class User
     public static User LoadFromXml(string filePath)
     {
         if (!System.IO.File.Exists(filePath))
-            return new User(); // Используем конструктор по умолчанию
+            return new User();
 
         var doc = XDocument.Load(filePath);
         var userElement = doc.Element("User");

@@ -11,7 +11,6 @@ namespace DailyMealPlanner.Forms
         private List<Category> categories;
         private MealTime mealTime;
         private List<Product> selectedProducts = new List<Product>();
-
         public AddMenuForm(List<Category> md, MealTime mt)
         {
             InitializeComponent();
@@ -25,6 +24,9 @@ namespace DailyMealPlanner.Forms
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+
+            // Заполняет flowLayoutPanel объектами типа CollapsiblePanel,
+            // содержащие название категории и список продуктов
 
             foreach (var category in categories)
             {
@@ -77,6 +79,7 @@ namespace DailyMealPlanner.Forms
             }
         }
 
+        // Отображение выбранных продуктов
         private void UpdateSelectedProductsPanel()
         {
             flowLayoutPanel3.Controls.Clear(); 
@@ -110,7 +113,7 @@ namespace DailyMealPlanner.Forms
         private void SearchButton_Click(object sender, EventArgs e)
         {
             string searchText = SearchTextBox.Text.ToLower().Trim();
-            flowLayoutPanel2.Controls.Clear(); // очищаем старые результаты
+            flowLayoutPanel2.Controls.Clear(); 
 
             if (string.IsNullOrWhiteSpace(searchText))
                 return;
@@ -128,7 +131,6 @@ namespace DailyMealPlanner.Forms
                             Margin = new Padding(5)
                         };
 
-                        // Подписываемся на клик
                         foodCard.Click += (s, args) =>
                         {
                             if (foodCard.IsSelected)
