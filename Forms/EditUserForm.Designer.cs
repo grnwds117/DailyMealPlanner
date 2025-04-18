@@ -37,6 +37,7 @@
             ActivityLabel = new Label();
             SaveButton = new Button();
             ActivityComboBox = new ComboBox();
+            errorLabel = new Label();
             SuspendLayout();
             // 
             // WeightTextBox
@@ -115,11 +116,21 @@
             ActivityComboBox.Size = new Size(180, 28);
             ActivityComboBox.TabIndex = 9;
             // 
+            // errorLabel
+            // 
+            errorLabel.AutoSize = true;
+            errorLabel.ForeColor = Color.FromArgb(192, 0, 0);
+            errorLabel.Location = new Point(23, 27);
+            errorLabel.Name = "errorLabel";
+            errorLabel.Size = new Size(0, 20);
+            errorLabel.TabIndex = 10;
+            // 
             // EditUserForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(372, 376);
+            Controls.Add(errorLabel);
             Controls.Add(ActivityComboBox);
             Controls.Add(SaveButton);
             Controls.Add(ActivityLabel);
@@ -129,6 +140,7 @@
             Controls.Add(HeightTextBox);
             Controls.Add(WeightLabel);
             Controls.Add(WeightTextBox);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "EditUserForm";
             Text = "EditUserForm";
             ResumeLayout(false);
@@ -146,5 +158,6 @@
         private Label ActivityLabel;
         private Button SaveButton;
         private ComboBox ActivityComboBox;
+        private Label errorLabel;
     }
 }

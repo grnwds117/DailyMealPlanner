@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace DailyMealPlanner.Forms
+﻿namespace DailyMealPlanner.Forms
 {
     public partial class EditUserForm : Form
     {
@@ -29,8 +19,31 @@ namespace DailyMealPlanner.Forms
             ActivityComboBox.Text = currentUser.Activity;
         }
 
+        private bool ValidateInput()
+        {
+            int temp;
+            if (string.IsNullOrWhiteSpace(WeightTextBox.Text) ||
+                string.IsNullOrWhiteSpace(HeightTextBox.Text) ||
+                string.IsNullOrWhiteSpace(AgeTextBox.Text) ||
+                !int.TryParse(WeightTextBox.Text, out temp) ||
+                !int.TryParse(HeightTextBox.Text, out temp) ||
+                !int.TryParse(AgeTextBox.Text, out temp))
+            {
+                errorLabel.Text = "Некоторые данные введены некорректно";
+                return false;
+            }
+
+            errorLabel.Text = "";
+            return true;
+        }
+
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            if (!ValidateInput())
+            {
+                return;
+            }
+
             currentUser.Weight = int.Parse(WeightTextBox.Text);
             currentUser.Height = int.Parse(HeightTextBox.Text);
             currentUser.Age = int.Parse(AgeTextBox.Text);
